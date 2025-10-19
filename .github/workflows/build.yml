@@ -13,7 +13,7 @@ jobs:
       contents: write
     strategy:
       matrix:
-        repos: [pacman-hook-kernel-install]
+        repos: [pacman-hook-kernel-install, systemd-cron]
 
       fail-fast: false
       
