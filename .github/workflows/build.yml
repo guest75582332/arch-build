@@ -55,7 +55,7 @@ jobs:
           RCLONE_CONFIG_CONTENT: ${{ secrets.RCLONE_CONFIG }}
           RCLONE_CONFIG_NAME: gdrive
           dest_path: /archrepo
-          repo_name: vifly
+          repo_name: repo
           gpg-privatekey: ${{ secrets.gpg_private_key }}
           local_path: ${{ steps.download.outputs.download-path }}
 
