@@ -13,7 +13,7 @@ jobs:
       contents: write
     strategy:
       matrix:
-        repos: [dracut-numlock, pacdiff-pacman-hook-git, pacman-hook-kernel-install, systemd-cron]
+        repos: [dracut-numlock, google-chrome-dev, pacdiff-pacman-hook-git, pacman-hook-kernel-install, systemd-cron]
 
       fail-fast: false
       
