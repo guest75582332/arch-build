@@ -1,4 +1,6 @@
 name: BUILD
+permissions:
+  contents: read
 
 on:
   push:
@@ -7,6 +9,8 @@ on:
 
 jobs:
   buildAUR:
+    permissions:
+      contents: write
     strategy:
       matrix:
         repos: [pacman-hook-kernel-install]
@@ -37,6 +41,8 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
           
   uploadToOneDrive:      
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     if: always()
     needs: [buildAUR]
