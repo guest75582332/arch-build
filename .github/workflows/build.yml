@@ -9,12 +9,7 @@ jobs:
   buildAUR:
     strategy:
       matrix:
-        repos: [osu-lazer, weechat-notify-send, fpp, redsocks, git-cola, realesrgan-ncnn-vulkan, python-torchaudio, python-torchinfo, python-rapidocr-onnxruntime, python-faster-whisper, ludusavi]
-        include:
-          - repos: git-cola
-            preinstall-pkgs: "at-spi2-core"
-          - repos: realesrgan-ncnn-vulkan
-            preinstall-pkgs: "vulkan-intel"
+        repos: [pacman-hook-kernel-install]
 
       fail-fast: false
       
@@ -58,7 +53,7 @@ jobs:
       - uses: ./create-db-and-upload-action
         with:
           RCLONE_CONFIG_CONTENT: ${{ secrets.RCLONE_CONFIG }}
-          RCLONE_CONFIG_NAME: onedrive
+          RCLONE_CONFIG_NAME: gdrive
           dest_path: /archrepo
           repo_name: vifly
           gpg-privatekey: ${{ secrets.gpg_private_key }}
