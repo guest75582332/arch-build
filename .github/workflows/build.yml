@@ -18,8 +18,6 @@ jobs:
           - dracut-numlock
           - google-chrome-dev
           - ion-git
-          - koreader-appimage
-          - mangareader
           - murex
           - outline
           - pacman-hook-kernel-install
