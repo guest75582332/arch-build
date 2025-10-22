@@ -19,6 +19,7 @@ jobs:
           - google-chrome-dev
           - ion-git
           - murex
+          - notepadqq
           - outline
           - pacman-hook-kernel-install
           - systemd-cron
