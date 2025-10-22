@@ -13,8 +13,18 @@ jobs:
       contents: write
     strategy:
       matrix:
-        repos: [carapace-bin, dracut-numlock, google-chrome-dev, outline, pacman-hook-kernel-install, systemd-cron]
-
+        repos:
+          - carapace-bin
+          - dracut-numlock
+          - google-chrome-dev
+          - ion-git
+          - murex
+          - outline
+          - pacman-hook-kernel-install
+          - systemd-cron
+          - uutils-diffutils-bin
+          - uutils-findutils-bin
+          - visual-studio-code-insiders-bin
       fail-fast: false
       
     runs-on: ubuntu-latest
