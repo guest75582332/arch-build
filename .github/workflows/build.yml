@@ -18,6 +18,7 @@ jobs:
           - dracut-numlock
           - google-chrome-dev
           - ion-git
+          - kapow
           - murex
           - outline
           - pacman-hook-kernel-install
