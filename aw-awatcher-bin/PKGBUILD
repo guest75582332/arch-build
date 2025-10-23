@@ -1,15 +1,18 @@
 # Maintainer: CUI Hao <cuihao.leo@gmail.com>
 
-_pkgname='awatcher'
-pkgname="aw-${_pkgname}-bin"
+_pkgname='aw-awatcher'
+pkgname="${_pkgname}-bin"
 pkgver='0.3.1'
 pkgrel='1'
 pkgdesc="ActivityWatch-compatible activity and idle watchers"
 arch=('x86_64')
-url="https://github.com/2e3s/${_pkgname}"
+url="https://github.com/2e3s/awatcher"
 license=('MPL-2.0')
 depends=('gcc-libs' 'glibc' 'openssl')
-source=("${url}/releases/download/v0.3.1/aw-${_pkgname}_${pkgver}-1_amd64.deb")
+optdepends=('activitywatch: ActivityWatch server')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+source=("${url}/releases/download/v${pkgver}/${_pkgname}_${pkgver}-1_amd64.deb")
 sha256sums=("23c65f29b3b8285decaf13e32fadbeae1bb3d0ca40c7a70b0eda6d8078d798a2")
 
 package() {
