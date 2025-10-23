@@ -1,0 +1,16 @@
+# Maintainer: CUI Hao <cuihao.leo@gmail.com>
+
+pkgname=aw-awatcher-bin
+pkgver=0.3.1
+pkgrel=1
+pkgdesc="ActivityWatch-compatible activity and idle watchers"
+arch=('x86_64')
+url="https://github.com/2e3s/awatcher"
+license=('MPL-2.0')
+depends=()
+source=("https://github.com/2e3s/awatcher/releases/download/v0.3.1/aw-awatcher_0.3.1-1_amd64.deb")
+sha256sums=("23c65f29b3b8285decaf13e32fadbeae1bb3d0ca40c7a70b0eda6d8078d798a2")
+
+package() {
+  bsdtar -xf data.tar.xz -C "$pkgdir/"
+}
