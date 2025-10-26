@@ -5,8 +5,8 @@ pkgname="${_pkgname}-git"
 pkgver='r289.a964edf'
 pkgrel='1'
 pkgdesc='A simple REST API testing tool'
-arch=(x86_64)
-url="https://apps.kde.org/${_pkgname}/"
+arch=('x86_64')
+url="https://apps.kde.org/${_pkgname}"
 license=('GPL-3.0-or-later')
 depends=('gcc-libs'
          'glibc'
@@ -24,7 +24,7 @@ depends=('gcc-libs'
 makedepends=('extra-cmake-modules'
              'git'
              'vulkan-headers')
-provides=("${_pkgname})
+provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 source=("git+https://invent.kde.org/utilities/${_pkgname}.git")
 sha256sums=('SKIP')
@@ -35,7 +35,7 @@ pkgver() {
 }
 
 build() {
-  cmake -B build -S "${_pkgname}" -DCMAKE_INSTALL_PREFIX='/usr' -DBUILD_TESTING=OFF
+  cmake -B build -S "${_pkgname}" -DCMAKE_INSTALL_PREFIX='/usr' -DBUILD_TESTING='OFF'
   cmake --build build
 }
 
