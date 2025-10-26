@@ -58,7 +58,7 @@ jobs:
     strategy:
       matrix:
         PKGBUILDs: 
-          - aw-awatcher-bin
+          - fielding-git
       fail-fast: false
       
     runs-on: ubuntu-latest
