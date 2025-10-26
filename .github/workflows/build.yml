@@ -19,6 +19,7 @@ jobs:
           - carapace-bin
           - dracut-numlock
           - google-chrome-dev
+          - gtrash-bin
           - ion-git
           - murex
           - outline
