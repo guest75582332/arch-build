@@ -1,13 +1,17 @@
 # Maintainer: Leandro Guedes <leanguedes at icloud dot com>
 
-pkgname='fielding-git'
+_pkgname='fielding'
+pkgname="${_pkgname}-git"
 pkgver='r289.a964edf'
 pkgrel='1'
 pkgdesc='A simple REST API testing tool'
 arch=(x86_64)
-url="https://apps.kde.org/${pkgname%-git}/"
+url="https://apps.kde.org/${_pkgname}/"
 license=('GPL-3.0-or-later')
-depends=('kconfig'
+depends=('gcc-libs'
+         'glibc'
+         'hicolor-icon-theme'
+         'kconfig'
          'kcoreaddons'
          'kdbusaddons'
          'ki18n'
@@ -20,18 +24,18 @@ depends=('kconfig'
 makedepends=('extra-cmake-modules'
              'git'
              'vulkan-headers')
-provides=("${pkgname%-git}")
-conflicts=("${pkgname%-git}")
-source=("git+https://invent.kde.org/utilities/${pkgname%-git}.git")
+provides=("${_pkgname})
+conflicts=("${_pkgname}")
+source=("git+https://invent.kde.org/utilities/${_pkgname}.git")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd "${srcdir}/${pkgname%-git}"
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  cd "${srcdir}/${_pkgname}"
+  printf 'r%s.%s' "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
-  cmake -B build -S ${pkgname%-git} -DBUILD_TESTING=OFF
+  cmake -B build -S "${_pkgname}" -DCMAKE_INSTALL_PREFIX='/usr' -DBUILD_TESTING=OFF
   cmake --build build
 }
 
