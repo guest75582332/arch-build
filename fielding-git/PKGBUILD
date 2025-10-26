@@ -1,16 +1,13 @@
 # Maintainer: Leandro Guedes <leanguedes at icloud dot com>
 
 pkgname='fielding-git'
-pkgver='r231.6483fa1'
+pkgver='r289.a964edf'
 pkgrel='1'
 pkgdesc='A simple REST API testing tool'
 arch=(x86_64)
-url='https://apps.kde.org/keepsecret/'
+url="https://apps.kde.org/${pkgname%-git}/"
 license=('GPL-3.0-or-later')
-depends=('gcc-libs'
-         'glib2'
-         'glibc'
-         'kconfig'
+depends=('kconfig'
          'kcoreaddons'
          'kdbusaddons'
          'ki18n'
@@ -23,7 +20,6 @@ depends=('gcc-libs'
          'qt6-svg')
 makedepends=('extra-cmake-modules'
              'git'
-             'kdoctools'
              'vulkan-headers')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
