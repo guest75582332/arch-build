@@ -60,6 +60,7 @@ jobs:
       matrix:
         PKGBUILDs: 
           - fielding-git
+          - kfloppy
       fail-fast: false
       
     runs-on: ubuntu-latest
