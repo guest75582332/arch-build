@@ -23,6 +23,7 @@ jobs:
           - murex
           - outline
           - pacman-hook-kernel-install
+          - pls-git
           - systemd-cron
           - uutils-diffutils-bin
           - uutils-findutils-bin
