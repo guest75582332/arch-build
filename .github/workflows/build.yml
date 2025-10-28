@@ -59,7 +59,8 @@ jobs:
     strategy:
       matrix:
         PKGBUILDs: 
-          - fielding-git
+          - hashomatic
+          - kfloppy
       fail-fast: false
       
     runs-on: ubuntu-latest

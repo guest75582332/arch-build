@@ -1,0 +1,37 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname='kfloppy'
+pkgver='23.04.3'
+pkgrel='1'
+pkgdesc='Floppy Formatter'
+url="https://apps.kde.org/$pkgname"
+arch=('x86_64')
+license=('GPL-2.0-or-later')
+depends=('gcc-libs'
+         'glibc'
+         'hicolor-icon-theme'
+         'kconfig5'
+         'kconfigwidgets5'
+         'kcoreaddons5'
+         'kxmlgui5'
+         'kcompletion5'
+         'kcrash5'
+         'ki18n5'
+         'kwidgetsaddons5'
+         'qt5-base')
+makedepends=('extra-cmake-modules' 'kdoctools5')
+groups=('kde-applications' 'kde-utilities')
+source=("https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz")
+sha256sums=('9d247ce63ba98bf52e5f13fb7d6ec181f489f1f0aa71e9f3abca9c71b75c63e0')
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DBUILD_TESTING=OFF
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
