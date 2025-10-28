@@ -27,7 +27,7 @@ source=("https://download.kde.org/stable/${_pkgname}/${_pkgname}-$pkgver.tar.xz"
 sha256sums=('bfabdc12234f9ae73ba652d881d66e9220fba3f8bbf6074fcde6a0e90cc7fc1a')
 
 build() {
-  cmake -B build -S $pkgname-$pkgver -DBUILD_TESTING='OFF'
+  cmake -B build -S ${_pkgname}-$pkgver -DBUILD_TESTING='OFF'
   cmake --build build
 }
 
