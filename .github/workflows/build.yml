@@ -24,6 +24,7 @@ jobs:
           - outline
           - pacman-hook-kernel-install
           - pls-git
+          - ruqola
           - systemd-cron
           - uutils-diffutils-bin
           - uutils-findutils-bin
