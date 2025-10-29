@@ -19,7 +19,8 @@ pacman -Sy --noconfirm && pacman -S --noconfirm archlinuxcn-keyring
 pacman -Syu --noconfirm archlinux-keyring
 pacman -S --noconfirm yay
 if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
-    pacman -S --noconfirm "$INPUT_PREINSTALLPKGS"
+    read -r -a preinstall_pkgs <<< "$INPUT_PREINSTALLPKGS"
+    pacman -S --noconfirm "${preinstall_pkgs[@]}"
 fi
 
 sudo --set-home -u builder yay -S --noconfirm --builddir=./ "$pkgname"
