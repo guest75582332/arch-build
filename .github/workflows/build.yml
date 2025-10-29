@@ -18,6 +18,7 @@ jobs:
           - activitywatch-git
           - carapace-bin
           - dracut-numlock
+          - glaxnimate
           - google-chrome-dev
           - ion-git
           - murex
