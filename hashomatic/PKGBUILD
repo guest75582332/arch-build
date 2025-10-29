@@ -10,8 +10,6 @@ url="https://apps.kde.org/$pkgname"
 license=('LGPL-2.1-or-later')
 depends=('gcc-libs'
          'glibc'
-         'gpgmepp'
-         'qgpgme'
          'hicolor-icon-theme'
          'kconfig'
          'kcoreaddons'
