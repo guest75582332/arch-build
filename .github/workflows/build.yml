@@ -31,6 +31,8 @@ jobs:
           - uutils-findutils-bin
           - visual-studio-code-insiders-bin
         include:
+          - repos: glaxnimate
+            preinstall-pkgs: "vulkan-headers"
           - repos: ruqola
             preinstall-pkgs: "appstream kdoctools ktextaddons kuserfeedback plasma-activities reuse vulkan-headers"
       fail-fast: false
