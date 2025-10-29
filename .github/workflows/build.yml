@@ -24,10 +24,14 @@ jobs:
           - outline
           - pacman-hook-kernel-install
           - pls-git
+          - ruqola
           - systemd-cron
           - uutils-diffutils-bin
           - uutils-findutils-bin
           - visual-studio-code-insiders-bin
+        include:
+          - repos: ruqola
+            preinstall-pkgs: "appstream kdoctools ktextaddons kuserfeedback plasma-activities reuse vulkan-headers"
       fail-fast: false
       
     runs-on: ubuntu-latest
