@@ -64,7 +64,6 @@ jobs:
       matrix:
         PKGBUILDs: 
           - hashomatic
-          - kfloppy
       fail-fast: false
       
     runs-on: ubuntu-latest
