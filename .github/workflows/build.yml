@@ -25,7 +25,6 @@ jobs:
           - outline
           - pacman-hook-kernel-install
           - pls-git
-          - ruqola
           - systemd-cron
           - uutils-diffutils-bin
           - uutils-findutils-bin
@@ -33,8 +32,6 @@ jobs:
         include:
           - repos: glaxnimate
             preinstall-pkgs: "vulkan-headers"
-          - repos: ruqola
-            preinstall-pkgs: "appstream kdoctools ktextaddons kuserfeedback plasma-activities reuse vulkan-headers"
       fail-fast: false
       
     runs-on: ubuntu-latest
