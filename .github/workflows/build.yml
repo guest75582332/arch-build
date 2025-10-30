@@ -18,7 +18,6 @@ jobs:
           - activitywatch-git
           - carapace-bin
           - dracut-numlock
-          - glaxnimate
           - google-chrome-dev
           - ion-git
           - murex
@@ -29,9 +28,6 @@ jobs:
           - uutils-diffutils-bin
           - uutils-findutils-bin
           - visual-studio-code-insiders-bin
-        include:
-          - repos: glaxnimate
-            preinstall-pkgs: "vulkan-headers"
       fail-fast: false
       
     runs-on: ubuntu-latest
