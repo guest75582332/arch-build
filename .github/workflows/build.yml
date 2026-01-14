@@ -16,8 +16,7 @@ jobs:
     strategy:
       matrix:
         repos:
-          - awatcher-bundle
-          - carapace-bin
+          - carapace
           - dracut-numlock
           - google-chrome-dev
           - ion-git
@@ -26,8 +25,8 @@ jobs:
           - pacman-hook-kernel-install
           - pls-git
           - systemd-cron
-          - uutils-diffutils-bin
-          - uutils-findutils-bin
+          - uutils-diffutils
+          - uutils-findutils
           - visual-studio-code-insiders-bin
       fail-fast: false
       
