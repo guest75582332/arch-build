@@ -9,3 +9,23 @@ updates:
     directory: "/.github" # Location of package manifests
     schedule:
       interval: "weekly"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /build-aur-action
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /build-nonaur-action
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /create-db-and-upload-action
+    schedule:
+      interval: daily
