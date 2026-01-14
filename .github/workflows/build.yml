@@ -16,8 +16,7 @@ jobs:
     strategy:
       matrix:
         repos:
-          - aw-awatcher
-          - activitywatch-git
+          - awatcher-bundle
           - carapace-bin
           - dracut-numlock
           - google-chrome-dev
