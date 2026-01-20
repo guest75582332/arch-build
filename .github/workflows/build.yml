@@ -44,7 +44,7 @@ jobs:
       with:
         subject-path: "./*/*.pkg.tar.zst"
     
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v6
       with:
         path: ./*/*.pkg.tar.zst
         name: ${{ matrix.repos }}
@@ -84,7 +84,7 @@ jobs:
         with:
           subject-path: "./*/*.pkg.tar.zst"
           
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           path: ./*/*.pkg.tar.zst
           name: ${{ matrix.PKGBUILDs }}
