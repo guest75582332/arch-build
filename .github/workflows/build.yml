@@ -29,6 +29,9 @@ jobs:
           - uutils-diffutils
           - uutils-findutils
           - visual-studio-code-insiders-bin
+        include:
+          - repos: awatcher-bundle
+            preinstall-pkgs: "libxkbcommon"
       fail-fast: false
       
     runs-on: ubuntu-latest
