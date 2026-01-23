@@ -31,6 +31,8 @@ jobs:
           - uutils-findutils
           - visual-studio-code-insiders-bin
         include:
+          - repos: aw-awatcher
+            preinstall-pkgs: "libxkbcommon"
           - repos: awatcher-bundle
             preinstall-pkgs: "libxkbcommon"
       fail-fast: false
