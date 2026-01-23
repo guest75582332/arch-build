@@ -16,6 +16,7 @@ jobs:
     strategy:
       matrix:
         repos:
+          - aw-awatcher
           - awatcher-bundle
           - carapace
           - dracut-numlock
