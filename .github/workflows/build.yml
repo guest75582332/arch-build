@@ -25,6 +25,8 @@ jobs:
           - outline
           - pacman-hook-kernel-install
           - pls-git
+          - servo-git
+          - verso-git
           - systemd-cron
           - uutils-diffutils
           - uutils-findutils
