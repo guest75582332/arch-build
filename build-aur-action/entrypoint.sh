@@ -21,8 +21,6 @@ Server = https://repo.archlinuxcn.org/x86_64
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
 
-sed -i '/^\[options\]/a IgnorePkg = systemd-cron-next-git' /etc/pacman.conf
-
 pacman -Sy --noconfirm && pacman -S --noconfirm archlinuxcn-keyring
 pacman -Syu --noconfirm archlinux-keyring
 pacman -S --noconfirm yay
@@ -31,7 +29,11 @@ if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
     pacman -S --noconfirm "${preinstall_pkgs[@]}"
 fi
 
-sudo --set-home -u builder yay -S --noconfirm --builddir=./ "$pkgname"
+if [[ "$pkgname" == "systemd-cron" ]]; then
+    sudo --set-home -u builder yay -S --noconfirm --builddir=./ --aur "$pkgname"
+else
+    sudo --set-home -u builder yay -S --noconfirm --builddir=./ "$pkgname"
+fi
 
 # Find the actual build directory (pkgbase) created by yay.
 # Some AUR packages use a different pkgbase directory name,
