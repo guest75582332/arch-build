@@ -20,11 +20,13 @@ jobs:
           - carapace
           - dracut-numlock
           - google-chrome-dev
+          - heidisql-qt6
           - ion-git
           - murex
           - outline
           - pacman-hook-kernel-install
           - pls-git
+          - pgadmin4-desktop
           - systemd-cron
           - uutils-diffutils
           - uutils-findutils

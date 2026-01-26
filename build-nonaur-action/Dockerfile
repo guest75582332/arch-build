@@ -1,12 +1,6 @@
 FROM archlinux:latest
-
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN date
-RUN pacman -Syu --noconfirm
-RUN pacman -S base-devel git python --noconfirm
-
+RUN pacman -Syu --noconfirm base-devel git python
 COPY entrypoint.sh /entrypoint.sh
-
 USER root
-
 ENTRYPOINT ["/entrypoint.sh"]

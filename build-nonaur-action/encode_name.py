@@ -4,8 +4,7 @@ import os
 from glob import glob
 from base64 import urlsafe_b64encode, urlsafe_b64decode
 
-
-names = glob("./*.tar.zst")
+names = glob("./**/*.tar.zst", recursive=True)
 for name in names:
     new_name = name.removesuffix(".tar.zst")
     new_name = new_name.replace(":", "-colon-")

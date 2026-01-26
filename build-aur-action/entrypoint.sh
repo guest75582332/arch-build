@@ -8,22 +8,31 @@ useradd builder -m
 echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 chmod -R a+rw .
 
+pacman-key --init
+pacman-key --recv-key 3056513887B78AEB
+pacman-key --lsign-key 3056513887B78AEB
+pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
 cat << EOM >> /etc/pacman.conf
 [archlinuxcn]
 Server = https://repo.archlinuxcn.org/x86_64
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
 
-pacman-key --init
-pacman-key --lsign-key "farseerfc@archlinux.org"
-pacman -Sy --noconfirm && pacman -S --noconfirm archlinuxcn-keyring
-pacman -Syu --noconfirm archlinux-keyring
-pacman -S --noconfirm yay
+pacman -Syu --noconfirm archlinux-keyring archlinuxcn-keyring && pacman -Syu --noconfirm yay
+
 if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
     read -r -a preinstall_pkgs <<< "$INPUT_PREINSTALLPKGS"
-    pacman -S --noconfirm "${preinstall_pkgs[@]}"
+    pacman -Syu --noconfirm "${preinstall_pkgs[@]}"
 fi
 
-sudo --set-home -u builder yay -S --noconfirm --builddir=./ "$pkgname"
+if [[ "$pkgname" == "systemd-cron" ]]; then
+    sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "aur/$pkgname"
+else
+    sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "$pkgname"
+fi
 
 # Find the actual build directory (pkgbase) created by yay.
 # Some AUR packages use a different pkgbase directory name,
@@ -41,11 +50,10 @@ if [[ -d "$pkgname" ]];
   then
     pkgdir="$pkgname"
   else
-    pacman -S --needed --noconfirm jq
+    pacman -Syu --needed --noconfirm jq
     pkgdir="$(get_pkgbase "$pkgname")"
 fi
 
 echo "The pkgdir is $pkgdir"
 echo "The pkgname is $pkgname"
-cd "$pkgdir"
-python3 ../build-aur-action/encode_name.py
+python3 ./build-aur-action/encode_name.py

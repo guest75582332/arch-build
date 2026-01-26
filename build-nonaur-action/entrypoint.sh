@@ -3,19 +3,19 @@ set -euo pipefail
 
 FILE="$(basename "$0")"
 
+pacman-key --init
+pacman-key --recv-key 3056513887B78AEB
+pacman-key --lsign-key 3056513887B78AEB
+pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
 # Enable the multilib repository
 cat << EOM >> /etc/pacman.conf
-[multilib]
-Include = /etc/pacman.d/mirrorlist
 [archlinuxcn]
 Server = https://repo.archlinuxcn.org/x86_64
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
-
-pacman-key --init
-pacman-key --lsign-key "farseerfc@archlinux.org"
-pacman -Sy --noconfirm && pacman -S --noconfirm archlinuxcn-keyring
-pacman -Syu --noconfirm archlinux-keyring
-pacman -Syu --noconfirm --needed yay
 
 # Makepkg does not allow running as root
 # Create a new user `builder`
@@ -107,7 +107,7 @@ function namcap_check() {
 	# Run namcap checks
 	# Installing namcap after building so that makepkg happens on a minimal
 	# install where any missing dependencies can be caught.
-	pacman -S --noconfirm --needed namcap
+	pacman -Syu --noconfirm --needed namcap
 
 	NAMCAP_ARGS=()
 	if [ -n "${INPUT_NAMCAPRULES:-}" ]; then
@@ -141,4 +141,5 @@ if [ -z "${INPUT_NAMCAPDISABLE:-}" ]; then
 	namcap_check
 fi
 
+cd "$BASEDIR" 
 python3 $BASEDIR/build-nonaur-action/encode_name.py
