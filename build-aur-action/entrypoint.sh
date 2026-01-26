@@ -28,11 +28,14 @@ if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
     pacman -Syu --noconfirm "${preinstall_pkgs[@]}"
 fi
 
-if [[ "$pkgname" == "systemd-cron" ]]; then
+case "$pkgname" in
+  systemd-cron|powershell)
     sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "aur/$pkgname"
-else
+    ;;
+  *)
     sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "$pkgname"
-fi
+    ;;
+esac
 
 # Find the actual build directory (pkgbase) created by yay.
 # Some AUR packages use a different pkgbase directory name,
