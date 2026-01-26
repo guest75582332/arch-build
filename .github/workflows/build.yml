@@ -25,6 +25,7 @@ jobs:
           - outline
           - pacman-hook-kernel-install
           - pls-git
+          - pgadmin4-desktop
           - systemd-cron
           - uutils-diffutils
           - uutils-findutils
