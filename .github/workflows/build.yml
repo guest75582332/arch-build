@@ -22,6 +22,7 @@ jobs:
           - google-chrome-dev
           - heidisql-qt6
           - ion-git
+          - ktechlab
           - murex
           - outline
           - pacman-hook-kernel-install
