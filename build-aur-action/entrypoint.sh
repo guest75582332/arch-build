@@ -21,6 +21,8 @@ Server = https://repo.archlinuxcn.org/x86_64
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
 
+sed -i '/^\[options\]/a IgnorePkg = systemd-cron-next-git' /etc/pacman.conf
+
 pacman -Sy --noconfirm && pacman -S --noconfirm archlinuxcn-keyring
 pacman -Syu --noconfirm archlinux-keyring
 pacman -S --noconfirm yay
