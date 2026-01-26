@@ -30,6 +30,7 @@ jobs:
           - systemd-cron
           - uutils-diffutils
           - uutils-findutils
+          - uutils-sed
           - visual-studio-code-insiders-bin
         include:
           - repos: awatcher-bundle
