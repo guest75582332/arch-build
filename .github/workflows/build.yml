@@ -20,6 +20,7 @@ jobs:
           - carapace
           - dracut-numlock
           - google-chrome-dev
+          - heidisql-qt6
           - ion-git
           - murex
           - outline
