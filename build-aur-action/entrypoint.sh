@@ -25,13 +25,13 @@ pacman -Syu --noconfirm archlinux-keyring archlinuxcn-keyring && pacman -Syu --n
 
 if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
     read -r -a preinstall_pkgs <<< "$INPUT_PREINSTALLPKGS"
-    pacman -S --noconfirm "${preinstall_pkgs[@]}"
+    pacman -Syu --noconfirm "${preinstall_pkgs[@]}"
 fi
 
 if [[ "$pkgname" == "systemd-cron" ]]; then
-    sudo --set-home -u builder yay -S --noconfirm --builddir=./ "aur/$pkgname"
+    sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "aur/$pkgname"
 else
-    sudo --set-home -u builder yay -S --noconfirm --builddir=./ "$pkgname"
+    sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "$pkgname"
 fi
 
 # Find the actual build directory (pkgbase) created by yay.
@@ -50,7 +50,7 @@ if [[ -d "$pkgname" ]];
   then
     pkgdir="$pkgname"
   else
-    pacman -S --needed --noconfirm jq
+    pacman -Syu --needed --noconfirm jq
     pkgdir="$(get_pkgbase "$pkgname")"
 fi
 
