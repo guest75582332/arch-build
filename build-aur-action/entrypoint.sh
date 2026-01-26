@@ -21,9 +21,8 @@ Server = https://repo.archlinuxcn.org/x86_64
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
 
-pacman -Sy --noconfirm && pacman -S --noconfirm archlinuxcn-keyring
-pacman -Syu --noconfirm archlinux-keyring
-pacman -S --noconfirm yay
+pacman -Syu archlinux-keyring archlinuxcn-keyring yay
+
 if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
     read -r -a preinstall_pkgs <<< "$INPUT_PREINSTALLPKGS"
     pacman -S --noconfirm "${preinstall_pkgs[@]}"
