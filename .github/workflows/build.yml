@@ -25,7 +25,6 @@ jobs:
           - murex
           - outline
           - pacman-hook-kernel-install
-          - pdf4qt
           - pls-git
           - pgadmin4-desktop
           - systemd-cron
