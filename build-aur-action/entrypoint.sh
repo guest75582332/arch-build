@@ -30,6 +30,7 @@ if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
 fi
 
 if [[ "$pkgname" == "systemd-cron" ]]; then
+    echo "Please See It!"
     sudo --set-home -u builder yay -S --noconfirm --builddir=./ --aur "$pkgname"
 else
     sudo --set-home -u builder yay -S --noconfirm --builddir=./ "$pkgname"
