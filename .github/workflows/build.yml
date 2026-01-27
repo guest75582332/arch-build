@@ -19,6 +19,7 @@ jobs:
           - awatcher-bundle
           - carapace
           - dracut-numlock
+          - fcitx5-pinyin-custom-pinyin-dictionary
           - google-chrome-dev
           - heidisql-qt6
           - ion-git
