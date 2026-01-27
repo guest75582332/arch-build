@@ -23,7 +23,9 @@ jobs:
           - google-chrome-dev
           - heidisql-qt6
           - ion-git
+          - linuxqq
           - linuxqq-appimage
+          - linuxqq-nt-bwrap
           - linuxqq-nt
           - murex
           - outline
@@ -36,7 +38,10 @@ jobs:
           - uutils-diffutils
           - uutils-findutils
           - visual-studio-code-insiders-bin
+          - wechat
+          - wechat-bin
           - wechat-appimage
+          - wechat-universal-bwrap
         include:
           - repos: awatcher-bundle
             preinstall-pkgs: "libxkbcommon"
