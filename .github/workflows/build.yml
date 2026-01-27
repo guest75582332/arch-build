@@ -27,7 +27,6 @@ jobs:
           - pacman-hook-kernel-install
           - pls-git
           - pgadmin4-desktop
-          - powershell
           - systemd-cron
           - uutils-diffutils
           - uutils-findutils
