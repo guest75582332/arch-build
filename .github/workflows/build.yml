@@ -23,6 +23,7 @@ jobs:
           - google-chrome-dev
           - heidisql-qt6
           - ion-git
+          - linuxqq-appimage
           - murex
           - outline
           - pacman-hook-kernel-install
@@ -35,7 +36,6 @@ jobs:
           - uutils-findutils
           - visual-studio-code-insiders-bin
           - wechat-appimage
-          - wechat-bin
         include:
           - repos: awatcher-bundle
             preinstall-pkgs: "libxkbcommon"
