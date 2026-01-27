@@ -25,9 +25,11 @@ jobs:
           - murex
           - outline
           - pacman-hook-kernel-install
+          - pacman-log-orphans-hook
           - pls-git
           - pgadmin4-desktop
           - systemd-cron
+          - ukibak
           - uutils-diffutils
           - uutils-findutils
           - visual-studio-code-insiders-bin
