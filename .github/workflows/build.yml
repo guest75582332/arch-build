@@ -24,6 +24,7 @@ jobs:
           - heidisql-qt6
           - ion-git
           - linuxqq-appimage
+          - linuxqq-nt
           - murex
           - outline
           - pacman-hook-kernel-install
