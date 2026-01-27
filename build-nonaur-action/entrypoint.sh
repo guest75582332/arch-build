@@ -9,13 +9,14 @@ pacman-key --lsign-key 3056513887B78AEB
 pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
 pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 
-# Enable the multilib repository
 cat << EOM >> /etc/pacman.conf
 [archlinuxcn]
 Server = https://repo.archlinuxcn.org/x86_64
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
+
+sed -i '/^OPTIONS=/s/!*debug/!debug/g' /etc/makepkg.conf
 
 # Makepkg does not allow running as root
 # Create a new user `builder`
