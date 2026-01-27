@@ -21,6 +21,8 @@ Server = https://repo.archlinuxcn.org/x86_64
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOM
 
+sed -i '/^OPTIONS=/s/debug/!debug/' /etc/makepkg.conf
+
 pacman -Syu --noconfirm archlinux-keyring archlinuxcn-keyring && pacman -Syu --noconfirm yay
 
 if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
