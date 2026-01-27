@@ -29,7 +29,7 @@ if [ ! -z "$INPUT_PREINSTALLPKGS" ]; then
 fi
 
 case "$pkgname" in
-  systemd-cron|powershell)
+  systemd-cron)
     sudo --set-home -u builder yay -Syu --noconfirm --builddir=./ "aur/$pkgname"
     ;;
   *)
