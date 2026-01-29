@@ -29,6 +29,7 @@ jobs:
           - pacman-hook-kernel-install
           - pacman-log-orphans-hook
           - pls-git
+          - pocket-id-bin
           - pgadmin4-desktop
           - systemd-cron
           - ukibak
