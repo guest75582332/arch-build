@@ -39,7 +39,7 @@ jobs:
           - visual-studio-code-insiders-bin
           - wechat-appimage
         include:
-          - repos: awatcher-bundle
+          - repos: aw-awatcher
             preinstall-pkgs: "libxkbcommon"
       fail-fast: false
       
