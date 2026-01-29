@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         repos:
-          - activitywatch-bin
           - aw-awatcher
           - carapace
           - dracut-numlock
