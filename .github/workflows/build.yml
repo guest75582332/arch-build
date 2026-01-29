@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         repos:
-          - awatcher-bundle
           - carapace
           - dracut-numlock
           - fcitx5-pinyin-custom-pinyin-dictionary
