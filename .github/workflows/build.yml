@@ -38,6 +38,7 @@ jobs:
           - uutils-findutils
           - visual-studio-code-insiders-bin
           - wechat-appimage
+          - yabsnap
         include:
           - repos: aw-awatcher
             preinstall-pkgs: "libxkbcommon"
