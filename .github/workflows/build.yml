@@ -17,6 +17,7 @@ jobs:
       matrix:
         repos:
           - aw-awatcher
+          - aw-watcher-media-player
           - carapace
           - dracut-numlock
           - fcitx5-pinyin-custom-pinyin-dictionary
