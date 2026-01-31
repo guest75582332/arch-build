@@ -21,6 +21,7 @@ jobs:
           - carapace
           - dracut-numlock
           - fcitx5-pinyin-custom-pinyin-dictionary
+          - flclash-bin
           - google-chrome-dev
           - heidisql-qt6
           - ion-git
