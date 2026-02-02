@@ -43,6 +43,8 @@ jobs:
         include:
           - repos: aw-awatcher
             preinstall-pkgs: "libxkbcommon"
+          - repos: heidisql-qt6
+            preinstall-pkgs: "unzip"
       fail-fast: false
       
     runs-on: ubuntu-latest
